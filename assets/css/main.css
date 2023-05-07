@@ -33,6 +33,17 @@ body {
 	line-height: 1;
 }
 
+p {
+	color: black;
+	font-weight: 400;
+	font-family: 'Courier New', Courier, monospace;
+}
+p a {
+	text-decoration: none;
+	color: rgb(38, 0, 206);
+	font-weight: 700;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -206,7 +217,8 @@ input, select, textarea {
 
 	header {
 		margin: 0 0 3em 0;
-	}
+		font-family: 'Courier New', Courier, monospace;
+}
 
 		header > p {
 			font-size: 1.25em;
