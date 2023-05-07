@@ -36,7 +36,7 @@ body {
 p {
 	color: black;
 	font-weight: 400;
-	font-family: 'Courier New', Courier, monospace;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 p a {
 	text-decoration: none;
