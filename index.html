@@ -168,23 +168,44 @@
 					</header>
 					<div class="row">
 						<div class="col-12">
-							<form method="post" action="#">
+
+							<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
+								<fieldset id="fs-frm-inputs">
+								  <label for="full-name">Full Name</label>
+								  <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+								  <label for="email-address">Email Address</label>
+								  <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+								  <label for="subject">Subject</label>
+								  <input type="subject" name="subject" id="subject" placeholder="Subject" required="">
+								  <label for="message">Message</label>
+								  <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
+								  <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+								</fieldset>
+								<input type="submit" value="Submit">
+							  </form>
+
+							  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
 								<div class="row">
 									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
+										<label for="full-name">Full Name</label>
+										<input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+										  </div>
 									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
-									</div>
+										<label for="email-address">Email Address</label>
+										<input type="email" name="_replyto" id="email-address" placeholder="email@domain.com" required="">
+										  </div>
 									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
-									</div>
+										<label for="subject">Subject</label>
+										<input type="subject" name="subject" id="subject" placeholder="Subject" required="">
+										  </div>
 									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
+										<label for="message">Message</label>
+										<textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
+										  </div>
 									<div class="col-12">
+										<input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
 										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
+											<li><input type="submit" value="Submit"></li>
 											<li><input type="reset" value="Clear Form" class="alt" /></li>
 										</ul>
 									</div>
