@@ -2019,11 +2019,14 @@ input, select, textarea {
 			}
 
 			.wrapper.style4 form input[type=text],
+			.wrapper.style4 form input[type=email],
 			.wrapper.style4 form input[type=password],
 			.wrapper.style4 form select,
 			.wrapper.style4 form textarea {
 				border: none;
 				background: #282828;
+				color: white;
+				font-weight: 700;
 			}
 
 				.wrapper.style4 form input[type=text]:focus,
