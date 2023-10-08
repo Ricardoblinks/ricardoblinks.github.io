@@ -111,7 +111,7 @@ input, select, textarea {
 	body, input, textarea, select {
 		font-family: 'Open Sans', sans-serif;
 		line-height: 1.85em;
-		color: #888;
+		/* color: #888; */
 		font-weight: 300;
 		font-size: 13pt;
 	}
@@ -182,6 +182,7 @@ input, select, textarea {
 	h1 {
 		font-size: 3.25em;
 		letter-spacing: -0.025em;
+		line-height: 40px;
 		font-weight: 300;
 	}
 
