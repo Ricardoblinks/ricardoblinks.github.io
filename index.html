@@ -1,405 +1,875 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>James Richard's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Richard Odinakachukwu | Fullstack Software Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066CC;
+            --secondary: #2D3748;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --accent: #4C1D95;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .bg-primary-soft {
+            background-color: rgba(0, 102, 204, 0.05);
+        }
+        
+        .text-primary {
+            color: var(--primary) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-stack {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+        
+        .tech-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+        
+        .tech-icon:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+        
+        .section-heading {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        
+        .section-heading:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-card .badge {
+            background-color: rgba(0, 102, 204, 0.1);
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .experience-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .experience-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--primary);
+        }
+        
+        .experience-item:after {
+            content: "";
+            position: absolute;
+            left: -4px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+        
+        .skill-progress {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e9ecef;
+            margin-bottom: 20px;
+        }
+        
+        .skill-progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            background-color: var(--primary);
+        }
+        
+        .contact-info i {
+            width: 30px;
+            color: var(--primary);
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.3);
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">James Richard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill px-4" href="#contact">Hire Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">About</a></li>
-					<li><a href="#work">Services</a></li>
-					<li><a href="#portfolio">Projects</a></li>
-					<li><a href="#reviews">Reviews</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text">
+                    <span class="badge bg-primary-soft text-primary mb-3">Fullstack Software Engineer</span>
+                    <h1 class="mb-4">Building <span class="text-primary">Digital Solutions</span> That Make A Difference</h1>
+                    <p class="lead mb-4">Specialized in C#/.NET, Python Django, React/React Native, and Node.js with 5+ years of experience developing enterprise applications and mobile solutions.</p>
+                    <div class="d-flex mt-5">
+                        <a href="#projects" class="btn btn-primary rounded-pill px-4 py-3 me-3">View My Work</a>
+                        <a href="#contact" class="btn btn-outline-primary rounded-pill px-4 py-3">Contact Me</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image mt-5 mt-lg-0">
+                    <img src="https://via.placeholder.com/600x500" alt="James Richard" class="img-fluid">
+                    <div class="tech-stack d-flex justify-content-center">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="tech-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" class="tech-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/pics.jpeg" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1>Hi. I'm <strong>James Richard O.</strong></h1>
-							</header>
-							<p style="text-align: justify;">
-								I am a <strong>Full-Stack / Backend Software Engineer</strong> with <strong>
-									7 years</strong> of experience in developing robust and scalable software solutions. <br>
-								<br>
-								
-								I graduated with a GPA of 3.8 in <strong>BSc Computer Science</strong> from <strong>Ecole Superieure de Gestion et de Technologie</strong>.
+    <!-- About Section -->
+    <section class="py-5 py-md-7" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="section-heading">About Me</h2>
+                    <p class="lead mb-4">I'm a passionate Fullstack Software Engineer with a focus on creating high-performance, scalable applications.</p>
+                    <p>With over 5 years of experience in software development, I've worked on a range of projects from government tax management systems to fintech mobile applications. I thrive in solving complex problems and continuously learning new technologies.</p>
+                    <p>I have a strong foundation in both frontend and backend development, with expertise in modern frameworks and tools. My goal is to create software that not only works flawlessly but also provides exceptional user experiences.</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4 me-3">Download CV</a>
+                        <a href="#contact" class="btn btn-primary rounded-pill px-4">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Personal Information</h4>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-2"><strong>Name:</strong> James Richard</p>
+                                    <p class="mb-2"><strong>Location:</strong> Abuja, Nigeria</p>
+                                    <p class="mb-2"><strong>Nationality:</strong> Nigerian</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="mb-2"><strong>Languages:</strong> English</p>
+                                    <p class="mb-2"><strong>Experience:</strong> 5+ Years</p>
+                                    <p class="mb-2"><strong>Availability:</strong> Remote, Full-time</p>
+                                </div>
+                            </div>
+                            <h4 class="mb-3 mt-4">Education</h4>
+                            <div class="mb-3">
+                                <p class="mb-1"><strong>BSc in Computer Science</strong></p>
+                                <p class="mb-0">Ecole Superieure de Gestion et de Technologie University</p>
+                                <p class="text-muted">October 2018 - September 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-								<br>
-								<br>
-								I am proficient in the use of <strong>Python (Django, Flask), Reactjs, HTML, CSS, JavaScript, and MySQL, 
-								</strong> and i have intermediate knowledge of <strong>C# (ASP.NET) and C</strong>.  
-								<br>
-								<br>
-								I am also expanding my knowledge of other languages and i am open to learning and working with any language that'd improve my skillset.
-								
-								<br><br>
-								
-								
-								
-								Notwithstanding i am open to <strong>remote, tutoring, contract, or freelance offers</strong>. <br> 
-								With my skills and expertise, i am capable of delivering top-notch software solutions to meet your needs.
-							</p>
+    <!-- Projects Section -->
+    <section class="py-5 py-md-7 bg-primary-soft" id="projects">
+        <div class="container">
+            <h2 class="section-heading text-center mb-5">My Recent Projects</h2>
+            <div class="row g-4">
+                <!-- Project 1: Tax Nova -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card bg-white h-100">
+                        <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Tax Nova App">
+                        <div class="card-body">
+                            <h5 class="card-title">Tax Nova</h5>
+                            <p class="card-text">A self-service tax portal mobile application allowing users to file taxes, track payments, and access tax documents.</p>
+                            <div class="d-flex flex-wrap mb-3">
+                                <span class="badge me-2 mb-2">React Native</span>
+                                <span class="badge me-2 mb-2">Node.js</span>
+                                <span class="badge me-2 mb-2">Azure</span>
+                                <span class="badge me-2 mb-2">SQL Server</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Fintech App -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card bg-white h-100">
+                        <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Fintech App">
+                        <div class="card-body">
+                            <h5 class="card-title">Finance Manager</h5>
+                            <p class="card-text">A comprehensive fintech mobile application for managing finances, transactions, and investments with secure authentication.</p>
+                            <div class="d-flex flex-wrap mb-3">
+                                <span class="badge me-2 mb-2">React Native</span>
+                                <span class="badge me-2 mb-2">Express</span>
+                                <span class="badge me-2 mb-2">MongoDB</span>
+                                <span class="badge me-2 mb-2">AWS</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Real Estate App -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card bg-white h-100">
+                        <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Real Estate App">
+                        <div class="card-body">
+                            <h5 class="card-title">Property Connect</h5>
+                            <p class="card-text">A real estate platform for property listings, agent delegation, and secure property transactions.</p>
+                            <div class="d-flex flex-wrap mb-3">
+                                <span class="badge me-2 mb-2">React Native</span>
+                                <span class="badge me-2 mb-2">Node.js</span>
+                                <span class="badge me-2 mb-2">PostgreSQL</span>
+                                <span class="badge me-2 mb-2">AWS S3</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Faith-based App -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card bg-white h-100">
+                        <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Faith-based App">
+                        <div class="card-body">
+                            <h5 class="card-title">Faith Connect</h5>
+                            <p class="card-text">A mobile application for faith communities featuring content sharing, event management, and community building tools.</p>
+                            <div class="d-flex flex-wrap mb-3">
+                                <span class="badge me-2 mb-2">React Native</span>
+                                <span class="badge me-2 mb-2">Express</span>
+                                <span class="badge me-2 mb-2">MongoDB</span>
+                                <span class="badge me-2 mb-2">Firebase</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5: Hotel Management System -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card bg-white h-100">
+                        <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Hotel Management System">
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel & Restaurant System</h5>
+                            <p class="card-text">Comprehensive system for hotel and restaurant management featuring QR code ordering, booking, and user administration.</p>
+                            <div class="d-flex flex-wrap mb-3">
+                                <span class="badge me-2 mb-2">React</span>
+                                <span class="badge me-2 mb-2">Node.js</span>
+                                <span class="badge me-2 mb-2">PostgreSQL</span>
+                                <span class="badge me-2 mb-2">AWS</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6: ASAP Vendor -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card bg-white h-100">
+                        <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="ASAP Vendor">
+                        <div class="card-body">
+                            <h5 class="card-title">ASAP Vendor</h5>
+                            <p class="card-text">A crypto exchange platform facilitating P2P transactions and direct sales with secure wallet integration.</p>
+                            <div class="d-flex flex-wrap mb-3">
+                                <span class="badge me-2 mb-2">React</span>
+                                <span class="badge me-2 mb-2">Node.js</span>
+                                <span class="badge me-2 mb-2">MongoDB</span>
+                                <span class="badge me-2 mb-2">Blockchain APIs</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="#" class="btn btn-sm btn-outline-primary me-2">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2">View All Projects</a>
+            </div>
+        </div>
+    </section>
 
-							<h1>Other Technologies</h1>
-							<p style="text-align: justify;">
-								<li>Docker</li>
-								<li>Amazon Web Services</li>
-								<li>Git (Github & Azure)</li>
-								<li>Machine Learning (Basics) etc.</li>
-								<!-- <li></li> -->
-							</p>
+    <!-- Experience Section -->
+    <section class="py-5 py-md-7" id="experience">
+        <div class="container">
+            <h2 class="section-heading mb-5">Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Fullstack Software Engineer</h5>
+                            <span class="badge bg-primary-soft text-primary">Feb 2023 - Oct 2024</span>
+                        </div>
+                        <h6 class="text-muted mb-3">Compumetrics Solution Nigeria Limited</h6>
+                        <p>Led the development and maintenance of tax management systems for multiple state revenue services in Nigeria.</p>
+                        <ul class="mt-3">
+                            <li>Provided primary support for FCT-IRS software using C#, Azure, and Microsoft SQL</li>
+                            <li>Revamped company website and created intranet portal with Python Django, ReactJS, MySQL</li>
+                            <li>Developed new features and provided support for KW-IRS software</li>
+                            <li>Created TaxNova mobile application using React Native for self-service tax portal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Fullstack Software Engineer</h5>
+                            <span class="badge bg-primary-soft text-primary">Jan 2020 - Feb 2023</span>
+                        </div>
+                        <h6 class="text-muted mb-3">Everbright Investment Hub Limited</h6>
+                        <p>Developed and maintained contracted software solutions for various clients.</p>
+                        <ul class="mt-3">
+                            <li>Developed an investment portal for real-time investment tracking using Django, ReactJS, MySQL, and AWS</li>
+                            <li>Created a nearby vendor app, a social e-commerce platform with Python Django, ReactJS, REST APIs</li>
+                            <li>Implemented secure payment gateways and user authentication systems</li>
+                            <li>Collaborated with design and product teams to deliver client-focused solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Freelance Developer</h5>
+                            <span class="badge bg-primary-soft text-primary">Nov 2024 - Present</span>
+                        </div>
+                        <h6 class="text-muted mb-3">Self-employed</h6>
+                        <p>Working with clients on custom software solutions and mobile applications.</p>
+                        <ul class="mt-3">
+                            <li>Developed a faith-based mobile application using React Native/Expo</li>
+                            <li>Built a real estate platform for property listings and agent management</li>
+                            <li>Implemented secure payment systems and user authentication</li>
+                            <li>Managed entire development lifecycle from requirements to deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section class="py-5 py-md-7 bg-primary-soft" id="skills">
+        <div class="container">
+            <h2 class="section-heading text-center mb-5">My Skills</h2>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Programming Languages</h4>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>C# / .NET</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Python</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>JavaScript/TypeScript</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>HTML/CSS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>SQL</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Frameworks & Libraries</h4>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>ASP.NET Core</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Django</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>React.js</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>React Native</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Node.js/Express</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Databases & Storage</h4>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Microsoft SQL Server</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>MySQL</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>PostgreSQL</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>MongoDB</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Tools & Platforms</h4>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Git/GitHub</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Docker</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>AWS</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Azure</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-							
-							<a href="#work" class="button large scrolly">Still not sure what i do?</a>
-						</div>
-					</div>
-				</div>
-			</article>
+    <!-- Contact Section -->
+    <section class="py-5 py-md-7" id="contact">
+        <div class="container">
+            <h2 class="section-heading text-center mb-5">Get In Touch</h2>
+            
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Contact Information</h4>
+                            
+                            <div class="contact-info mb-4">
+                                <p><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</p>
+                                <p><i class="fas fa-phone"></i> +234 90-9140-4351</p>
+                                <p><i class="fas fa-envelope"></i> ricardoblinks1@gmail.com</p>
+                            </div>
+                            
+                            <h5 class="mb-3">Follow Me</h5>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-medium"></i></a>
+                            </div>
+                            
+                            <div class="mt-5">
+                                <h5 class="mb-3">Available For</h5>
+                                <div class="d-flex flex-wrap">
+                                    <span class="badge bg-primary-soft text-primary me-2 mb-2 p-2">Remote Work</span>
+                                    <span class="badge bg-primary-soft text-primary me-2 mb-2 p-2">Full-time Roles</span>
+                                    <span class="badge bg-primary-soft text-primary me-2 mb-2 p-2">Contract Positions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Send Me a Message</h4>
+                            
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="nameInput" placeholder="John Doe">
+                                            <label for="nameInput">Your Name</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                                            <label for="emailInput">Email Address</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="subjectInput" placeholder="Subject">
+                                            <label for="subjectInput">Subject</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <textarea class="form-control" id="messageInput" style="height: 150px" placeholder="Your message"></textarea>
+                                            <label for="messageInput">Your Message</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary rounded-pill px-4 py-2">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- Work -->
-			<article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>Here's all the stuff I do.</h2>
-						<p>If you need any of the below services, feel free to contact me.</p>
-					</header>
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span >
-									<img style="width: 60px;" src="/images/mobile.png" alt="">
-								</span>
-								<h3 style="font-size: 21px;">Mobile & Desktop Applications</h3>
-								<p ">I create intuitive and user-friendly applications that work seamlessly across different platforms..</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span>
-									<img style="width: 60px;" src="/images/webapp.png" alt="">
-								</span>
-								<h3>Web Applications</h3>
-								<p ">I have the expertise to design and build scalable, secure, and easy-to-use web applications using MVCs or APIs.</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span>
-									<img style="width: 60px;" src="/images/tutor.png" alt="">
-								</span>
-								<h3>Private Tutor</h3>
-								<p ">I offer tailored one-on-one sessions to help you improve your programming skills..</p>
-							</section>
-						</div>
-					</div>
-					<footer>
-						<p>
-							Are you still not convinced?
-						</p>
-						<a href="#portfolio" class="button large scrolly">
-							Check out my recent works
-						</a>
-					</footer>
-				</div>
-			</article>
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2025 James Richard. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-		<!-- Portfolio -->
-			<article id="portfolio" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>Here’s some stuff I made recently.</h2>
-						<p>
-							These are few of my personal, private & official works
-						</p>
-					</header>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/compumetrics.png" alt="" /></a>
-								<h3><a href="#">Compumetrics Solution Limited</a></h3>
-								<p>
-									<strong>Software / Role:</strong>
-									Web Application | Full-stack Developer
-								</p>
-								<p>
-									<strong>Technologies Used:</strong>
-									React and Python Django
-								</p>
-								<p>
-									<strong>Unique Features:</strong>
-									Authentication, Intranet, Automated actions, Send emails, Receive emails sent to official email address, Role base dashboard view, Verification.  
-								</p>
-								<p>
-									<strong>Preview:</strong>
-									<!-- Github Link (<a href="https://github.com/Ricardoblinks/ebih">Web View</a>) -->
-									(<a href="https://compumetrics.com.ng" target="_blank">Web View</a>)
-								</p>
-
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/nearbyvendor.png" alt="" /></a>
-								<h3><a href="#">Nearby Vendor Inc.</a></h3>
-								<p>
-									<strong>Software / Role:</strong>
-									Web, Mobile & Desktop Application | Full-Stack developer
-								</p>
-								<p>
-									<strong>Technologies Used:</strong>
-									React and Python Django
-								</p>
-								<p>
-									<strong>Unique Features:</strong>
-									Authentication, Verification, Search & Filter, Automated actions, E-commerce, Social media, Advertisement.  
-								</p>
-								<br>
-								<p>
-									<strong>Preview:</strong>
-									<!-- Github Link (<a href="https://github.com/Ricardoblinks/ebih">Web View</a>) -->
-									(<a href="https://demo.nearbyvendor.com" target="_blank">Web View</a>)
-								</p>
-
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/everbright.png" alt="" /></a>
-								<h3><a href="#">EverBright Investment Hub</a></h3>
-								<p>
-									<strong>Software / Role:</strong>
-									Web Application | Full-stack Developer
-								</p>
-								<p>
-									<strong>Technologies Used:</strong>
-									Html, Css, JavaScript and Python Django
-								</p>
-								<p>
-									<strong>Unique Features:</strong>
-									Authentication, Verification, Search & Filter, Automated actions, Payment gateway integration, complex Records, complex Graphs, Wallet.  
-								</p>
-								<p>
-									<strong>Preview:</strong>
-									<!-- Github Link (<a href="https://github.com/Ricardoblinks/ebih">Web View</a>) -->
-									(<a href="https://everbrightinvestment.com/" target="_blank">Web View</a>)
-								</p>
-							</article>
-						</div>
-						<!--
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Star Wars Game</a></h3>
-								<p>
-									<strong>Product Type:</strong>
-									Mobile & Desktop Application
-								</p>
-								<p>
-									<strong>Basic Technologies:</strong>
-									Python Kivy
-								</p>
-								<p>
-									<strong>Features:</strong>
-									Automated actions, Wallet (Deposit & Withdrawal), Payment gateway Integration, reward and ranks.  
-								</p>
-								<p>
-									<strong>Status:</strong>
-									Development stage (50% completed)
-								</p>
-							</article>
-						</div> -->
-					</div>
-					<footer>
-						<p>
-							Are you interested in knowing what people say about my work ??
-						</p>
-						<a href="#reviews" class="button large scrolly">Check out my reviews</a>
-					</footer>
-				</div>
-			</article>
-
-		<!-- Reviews -->
-		<article id="reviews" class="wrapper style5">
-			<div class="container">
-				<header>
-					<h2>I am so excited we are here</h2>
-					<p>
-						what people say about me
-
-					</p>
-				</header>
-				<div class="row">
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<!-- <a href="#" class="image featured"><img src="images/marketconnect.png" alt="" /></a> -->
-							<h3><a href="#">Ene Idoko</a></h3>
-							<p>
-								<strong>Review:</strong>
-								A very goal oriented person, even though he's tough but he delivers
-							</p>
-							<p>
-								<strong>Relationship:</strong>
-								Student
-							</p>
-							<p>
-								<strong>Reach out to me: <a href="ene@compumetrics.com.ng">email</a> </strong>
-								
-							</p>
-						</article>
-					</div>
-
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<!-- <a href="#" class="image featured"><img src="images/marketconnect.png" alt="" /></a> -->
-							<h3><a href="#">Olajide</a></h3>
-							<p>
-								<strong>Review:</strong>
-								In 4 weeks time he taught me how to become a programmer, i am forever grateful sir.
-							</p>
-							<p>
-								<strong>Relationship:</strong>
-								Student
-							</p>
-							<p>
-								<strong>Reach out to me: <a href="#">email</a> </strong>
-								
-							</p>
-						</article>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<!-- <a href="#" class="image featured"><img src="images/marketconnect.png" alt="" /></a> -->
-							<h3><a href="#">Emmanuel Amos</a></h3>
-							<p>
-								<strong>Review:</strong>
-								Thanks bro, I've learnt and achieved a lot working with you on the few projects we have worked on together.
-							</p>
-							<p>
-								<strong>Relationship:</strong>
-								Colleague
-							</p>
-							<p>
-								<strong>Reach out to me: <a href="#">email</a> </strong>
-								
-							</p>
-						</article>
-					</div>
-				</div>
-				<footer>
-					<p>
-						To get in touch with me... click the button below.
-					</p>
-					<a href="#contact" class="button large scrolly">Get in touch with me</a>
-				</footer>
-			</div>
-		</article>
-		
-
-		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				<div class="container medium">
-					<header>
-						<h2></h2>
-						<p style="color: white;">Send me a message now and i'd respond immediately.</p>
-					</header>
-					<div class="row">
-						<div class="col-12">
-
-							  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mrgvjjla" method="post">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<label style="color: white; text-align: initial;" for="full-name">Full Name: </label>
-										<input type="text" name="name" id="full-name" placeholder="First and Last" required autocomplete="off">
-										  </div>
-									<div class="col-6 col-12-small">
-										<label style="color: white; text-align: initial;" for="email-address">Email Address: </label>
-										<input type="email" name="_replyto" id="email-address" placeholder="email@domain.com" required autocomplete="off">
-										  </div>
-									<div class="col-12">
-										<label style="color: white; text-align: initial;" for="subject">Subject: </label>
-										<input type="text" name="subject" id="subject" placeholder="Subject" required autocomplete="off">
-										  </div>
-									<div class="col-12">
-										<label style="color: white; text-align: initial;" for="message">Message: </label>
-										<textarea rows="5" name="message" id="message" placeholder="Write your message here." required autocomplete="off"></textarea>
-										  </div>
-									<div class="col-12">
-										<input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-										<ul class="actions">
-											<li><input type="submit" value="Submit"></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-
-
-
-
-
-
-							
-						</div>
-						<div class="col-12">
-							<hr />
-							<h3>Connect with me</h3>
-							<ul class="social">
-								<li><a href="https://twitter.com/ricardoblinks" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="https://wa.me/2349091404351" style="background-color: green;" class="icon brands fa-whatsapp"><span class="label">Whatsapp</span></a></li>
-								<li><a href="https://www.linkedin.com/in/ricardoblinks" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" style="background-color: blue;" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
-								<li><a href="https://www.instagram.com/ricardoblinks" style="background-color: rgb(175, 71, 30);" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://github.com/ricardoblinks" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<!--
-								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								-->
-							</ul>
-							<hr />
-						</div>
-					</div>
-					<footer>
-						<ul id="copyright">
-							<li>&copy; 2023. All rights reserved.</li><li>Designed by: <a href="http://ricardoblinks.github.io">RPCT Academy</a></li>
-						</ul>
-					</footer>
-				</div>
-			</article>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
